@@ -324,9 +324,8 @@ def render_results():
             st.write(info["actions"])
             st.markdown("**⚠️ 피하면 좋은 행동**")
             st.write(info["avoid"])
-    st.caption("설명은 첨부하신 사랑의 언어 유형 안내 이미지의 '소통법·행동·피할 것'을 한국어로 옮겨 재구성했습니다.")
     st.caption("이 결과는 자신을 이해하기 위한 참고 자료이며, 개인의 성향을 확정하는 진단이 아닙니다.")
-    if st.button("🔄 다시 검사하기", type="primary", use_container_width=True):
+    if st.button("🔄 다시 테스트하", type="primary", use_container_width=True):
         restart_test()
         st.rerun()
 
