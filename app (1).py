@@ -325,7 +325,7 @@ def render_results():
             st.markdown("**⚠️ 피하면 좋은 행동**")
             st.write(info["avoid"])
     st.caption("이 결과는 자신을 이해하기 위한 참고 자료이며, 개인의 성향을 확정하는 진단이 아닙니다.")
-    if st.button("🔄 다시 테스트하", type="primary", use_container_width=True):
+    if st.button("🔄 다시 테스트하기", type="primary", use_container_width=True):
         restart_test()
         st.rerun()
 
