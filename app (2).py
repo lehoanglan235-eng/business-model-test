@@ -12,6 +12,24 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 st.set_page_config(page_title="나의 사랑의 언어 | Love Language", page_icon="💜", layout="wide", initial_sidebar_state="expanded")
+# 비밀번호 확인
+if "authenticated" not in st.session_state:
+    st.session_state.authenticated = False
+
+if not st.session_state.authenticated:
+    st.title("🔒 Love Language 테스트")
+    st.write("서비스 이용을 위해 비밀번호를 입력해 주세요.")
+
+    password = st.text_input("비밀번호", type="password")
+
+    if st.button("입장하기"):
+        if password == st.secrets["APP_PASSWORD"]:
+            st.session_state.authenticated = True
+            st.rerun()
+        else:
+            st.error("비밀번호가 올바르지 않습니다.")
+
+    st.stop()
 
 # PDF 기준 유형 코드. 각 문항마다 둘 중 하나를 고르면 해당 유형에 1점이 더해집니다.
 LANGUAGES = {
